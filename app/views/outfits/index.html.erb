@@ -1,10 +1,25 @@
-<h1 style="color:#666"> All of my outfits </h1>
+<h1 style="color:#666"> What do you want to wear today? </h1>
 
+<div class="panel-body">
+
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= check_box_tag(:pet_dog) %>
+    <% @tags.each do |tag| %>
+      <%= label_tag(:tag, tag.name) %>
+      <%= check_box_tag(:tag) %>
+    <% end %>
+    <%= submit_tag("Search") %>
+  <% end %>
 
 <%@outfits.each do |outfit| %>
       <tr>
         <td class="col-md-2"> <%= image_tag(outfit.image_url,class: 'img-thumbnail img-reponsive') %> </td>
-        <td> <%=outfit.name %> </td>
+        <p> Name </p> <td> <%= outfit.name %> </td>
+          <% outfit.tags.each do |tag| %>
+        <p> Tag </p>
+          <%= tag.name %>
+          <% end %>
         <td>
           <%=link_to 'Show', outfit_path(outfit), class: 'btn btn-default btn-xs' %>
           <%= link_to 'Edit', edit_outfit_path(outfit), class: 'btn btn-success btn-xs' %>
@@ -15,4 +30,4 @@
     </table>
   </div>
 
-    <%= link_to 'Add New Outfit', new_outfit_path, class: 'btn btn-default' %>
+<p>    <%= link_to 'Add New Outfit', new_outfit_path, class: 'btn btn-default' %> </p>

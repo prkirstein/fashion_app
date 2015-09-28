@@ -1,6 +1,7 @@
 class OutfitsController < ApplicationController
   def index
     @outfits = Outfit.all
+    @tags = Tag.all
   end
 
   def show
