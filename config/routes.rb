@@ -17,13 +17,8 @@ Rails.application.routes.draw do
 
   get 'outfits/edit'
 
-  get 'outfit/index'
 
-  get 'outfit/show'
 
-  get 'outfit/new'
-
-  get 'outfit/edit'
 
   get 'test', to: 'static_pages#test'
   root 'static_pages#home'
