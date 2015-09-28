@@ -1,0 +1,11 @@
+<h1 style="color:#666"> All of my outfits </h1>
+
+
+      <!-- now rows for each artist, looping over artists -->
+      <% @outfits.each do |outfit| %>
+        <tr>
+          <td <%= image_tag(outfit.image_url, class: 'img-thumbnail img-responsive')  %> </td>
+        </tr>
+    <%  end %>
+
+    <%= link_to 'Add New Outfit', new_outfit_path, class: 'btn btn-default' %>

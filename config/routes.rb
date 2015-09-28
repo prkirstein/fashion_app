@@ -1,22 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get 'tags/index'
-
-  get 'tags/show'
-
-  get 'tags/new'
-
-  get 'tags/edit'
-
-  get 'outfits/index'
-
-  get 'outfits/show'
-
-  get 'outfits/new'
-
-  get 'outfits/edit'
-
+resources :outfits
+resources :tags
 
 
 
