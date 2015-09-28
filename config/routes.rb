@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  get 'outfit_tag/index'
+
+  get 'outfit_tag/show'
+
+  get 'outfit_tag/new'
+
+  get 'outfit_tag/edit'
+
 resources :outfits
 resources :tags
 

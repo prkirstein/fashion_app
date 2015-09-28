@@ -1,11 +1,18 @@
 <h1 style="color:#666"> All of my outfits </h1>
 
 
-      <!-- now rows for each artist, looping over artists -->
-      <% @outfits.each do |outfit| %>
-        <tr>
-          <td <%= image_tag(outfit.image_url, class: 'img-thumbnail img-responsive')  %> </td>
-        </tr>
-    <%  end %>
+<%@outfits.each do |outfit| %>
+      <tr>
+        <td class="col-md-2"> <%= image_tag(outfit.image_url,class: 'img-thumbnail img-reponsive') %> </td>
+        <td> <%=outfit.name %> </td>
+        <td>
+          <%=link_to 'Show', outfit_path(outfit), class: 'btn btn-default btn-xs' %>
+          <%= link_to 'Edit', edit_outfit_path(outfit), class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Delete', outfit, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
     <%= link_to 'Add New Outfit', new_outfit_path, class: 'btn btn-default' %>

@@ -11,6 +11,16 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 
+  def update
+      @outfit = get_outfit
+      if @outfit.update(outfit_params)
+        redirect_to outfit_path(@outfit), notice: "Outfit successfully updated"
+      else
+        render "edit"
+      end
+    end
+
+
   def create
     @outfit = Outfit.new(outfit_params)
 
@@ -23,6 +33,12 @@ class OutfitsController < ApplicationController
 
   def edit
     @outfit = get_outfit
+  end
+
+  def destroy
+    @outfit = get_outfit
+    @outfit.destroy
+    redirect_to outfits_path
   end
 
 private

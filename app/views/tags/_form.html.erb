@@ -1,0 +1,7 @@
+
+
+<%= simple_form_for @tag do |f| %>
+  <%= f.input :name, label: false, input_html: { placeholder: 'Tag name' } %>
+  <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger" %>
+
+<% end %>

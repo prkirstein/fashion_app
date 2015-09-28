@@ -1,0 +1,2 @@
+module OutfitTagHelper
+end
