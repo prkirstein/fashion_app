@@ -45,7 +45,7 @@ private
 
   # for great safety!
   def outfit_params
-    params.require(:outfit).permit(:name, :image_url, :description)
+    params.require(:outfit).permit(:name, :image_url, :description, :tag_ids => [])
   end
 
   def get_outfit

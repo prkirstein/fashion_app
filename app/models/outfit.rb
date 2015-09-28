@@ -11,6 +11,6 @@
 #
 
 class Outfit < ActiveRecord::Base
-  has_many :OutfitTags
-  has_many :tags, through: :Outfit_Tags
+  has_many :outfitTags
+  has_many :tags, through: :outfitTags
 end

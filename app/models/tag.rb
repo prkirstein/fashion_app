@@ -9,6 +9,6 @@
 #
 
 class Tag < ActiveRecord::Base
-  has_many :OutfitTags
-  has_many :outfits, through: :OutfitTags
+  has_many :outfitTags
+  has_many :outfits, through: :outfitTags
 end

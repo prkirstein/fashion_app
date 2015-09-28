@@ -3,6 +3,7 @@
   <%= @outfit.name %>
   <%=image_tag(@outfit.image_url, class: "img-responsive thumbnail") %>
   <strong>Description:</strong>  <%= @outfit.description %>
-</p>
-
- <%=link_to "All Outfits", outfits_path, class: 'btn btn-default btn-xs'%>
+  <p> Check out the tags </p>
+  <% @outfit.tags.each do |tag| %>
+  <%= tag.name %>
+  <% end %>
