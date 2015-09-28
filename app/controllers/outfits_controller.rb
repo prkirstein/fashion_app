@@ -11,6 +11,16 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 
+  def create
+    @outfit = Outfit.new(outfit_params)
+
+    if @outfit.save
+      redirect_to @outfit
+    else
+      render 'new'
+    end
+  end
+
   def edit
     @outfit = get_outfit
   end

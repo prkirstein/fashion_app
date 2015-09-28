@@ -1,13 +1,17 @@
 <h1> Upload a new outfit! </h1>
 
-<h2><script>
-  UPLOADCARE_LOCALE = "en";
-  UPLOADCARE_TABS = "file url facebook gdrive dropbox instagram evernote flickr skydrive";
-  UPLOADCARE_PUBLIC_KEY = "d6fa2b04d2b228d6b5a0";
-</script>
-<script charset="utf-8" src="//ucarecdn.com/widget/2.5.5/uploadcare/uploadcare.full.min.js"></script></h2>
-
-
-<input type="hidden" role="uploadcare-uploader"
-       data-crop=""
-       data-images-only="true" />
+<div class="container col-xs-12">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1> Add a new outfit </h1>
+  </div>
+  <div class="panel-body">
+    <%= simple_form_for @outfit do |f| %>
+      <%= f.input :name, label: false, input_html: { placeholder: 'Name' } %>
+      <%= f.input :description, label: false, as: :text, input_html: { placeholder: "Outfit Bio" } %>
+      <%= uploadcare_uploader_field :outfit, :image_url %>
+      <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger" %>
+    <% end %>
+  </div>
+</div>
+</div>

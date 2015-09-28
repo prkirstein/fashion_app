@@ -5,6 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= include_uploadcare_widget_from_cdn version: "1.5.5", min: true %>
+  <!--
+    results in:
+    <script src="https://ucarecdn.com/widget/1.5.5/uploadcare/uploadcare-1.5.5.min.js"></script>
+  -->
+  <%= uploadcare_settings %>
+<!--
+  results in:
+  <script>
+    //<![CDATA[
+      UPLOADCARE_PUBLIC_KEY = "demopublickey";
+      .... more settings ...
+    //]]>
+  </script>
+ -->
+
 </head>
 <body>
 
