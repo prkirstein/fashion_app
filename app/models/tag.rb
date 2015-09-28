@@ -11,4 +11,9 @@
 class Tag < ActiveRecord::Base
   has_many :outfitTags
   has_many :outfits, through: :outfitTags
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+  end
+
 end

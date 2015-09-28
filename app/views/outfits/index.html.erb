@@ -2,15 +2,7 @@
 
 <div class="panel-body">
 
-  <%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= check_box_tag(:pet_dog) %>
-    <% @tags.each do |tag| %>
-      <%= label_tag(:tag, tag.name) %>
-      <%= check_box_tag(:tag) %>
-    <% end %>
-    <%= submit_tag("Search") %>
-  <% end %>
+
 
 <%@outfits.each do |outfit| %>
       <tr>

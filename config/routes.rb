@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get 'outfit_tag/edit'
 
 resources :outfits
-resources :tags
 
+resources :tags do
+ get 'search'
+end
 
 
   get 'test', to: 'static_pages#test'

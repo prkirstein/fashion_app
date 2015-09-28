@@ -14,4 +14,14 @@
     </table>
   </div>
 
+
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <% @tags.each do |tag| %>
+      <%= label_tag(:tag, tag.name) %>
+      <%= check_box_tag(:tag) %>
+      <% end %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
     <%= link_to 'Add New tag', new_tag_path, class: 'btn btn-default' %>
