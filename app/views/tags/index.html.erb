@@ -14,14 +14,24 @@
     </table>
   </div>
 
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your type of outfit
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <%= @tags.each do |tag| %>
+      <li><a href=tags/:tag_id/search> @tag.name </a></li>
+      <% end %>
+    </ul>
+  </div>
 
-  <%= form_tag("/search", method: "get") do %>
+  <!-- commented out check boxes to use dropdown instead -->
+  <!-- <%= form_tag("/search", method: "get") do %>
     <%= label_tag(:q, "Search for:") %>
     <% @tags.each do |tag| %>
       <%= label_tag(:tag, tag.name) %>
       <%= check_box_tag(:tag) %>
       <% end %>
     <%= submit_tag("Search") %>
-  <% end %>
+  <% end %> -->
 
     <%= link_to 'Add New tag', new_tag_path, class: 'btn btn-default' %>
